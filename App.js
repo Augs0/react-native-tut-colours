@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
+import ColorButton from './components/ColorButton'
+import ColorForm from './components/ColorForm'
+import DefaultList from './data/defaultColors.json'
 
 export default function App() {
+  const [backgroundColor, setBackgroundColor] = useState("ivory");
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <ColorForm />
+      <FlatList style={[styles.container, { backgroundColor }]} data={DefaultList} renderItem={({ item }) => {
+        return (
+          <ColorButton
+            key={item.id}
+            backgroundColor={item.color}
+            onPress={setBackgroundColor}
+          />
+        );
+      }} />
+    </>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    display: "flex",
+  }
+
+})
