@@ -20,7 +20,9 @@ export default function ColorForm({ onNewColor = f => f }) {
                 placeholder="Add a colour..."
             />
             <Button
-                title="add"
+                color="purple"
+                title="Add"
+                accessibilityLabel="Add a colour"
                 onPress={() => {
                     input.current.blur();
                     onNewColor(inputValue);
@@ -33,9 +35,10 @@ export default function ColorForm({ onNewColor = f => f }) {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 40,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: "ivory",
+        marginRight: 5
     },
     txtInput: {
         flex: 1,
