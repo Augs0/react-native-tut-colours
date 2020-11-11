@@ -1,7 +1,9 @@
 {
   "expo": {
     "name": "react-native",
+    "description": "A basic colour catalogue created with LinkedIn Learning tutorial",
     "slug": "react-native",
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,9 +15,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

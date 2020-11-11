@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, FlatList, Alert } from "react-native";
+import React from "react";
+import { StyleSheet, FlatList } from "react-native";
 import ColorButton from "./ColorButton";
 import ColorForm from "./ColorForm";
 import { useColors } from "../hooks.js";
